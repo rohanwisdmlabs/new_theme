@@ -1,0 +1,54 @@
+.page-template-full_width {
+  width: 100%;
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
+
+.content-area {
+  width: 100%;
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
+.site {
+  margin: 0px;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  padding: 0 12px;
+}
+
+.table_style {
+  border-radius: 2px 2px;
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
+}
+
+th,
+td {
+  border-radius: 2px 2px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+}
+
+th {
+  background-color: rgba(66, 198, 250, 0.5);
+}
+td {
+  background-color: rgba(149, 217, 243, 0.5);
+}
