@@ -14,9 +14,10 @@
 
 	<div id="content" class="site-content">
 		<div id="primary" class="content-area">
-			<main id="main" class="site-main">
-                <nav class="navigation_menu">
+		<nav class="navigation_menu">
                     <?php wp_nav_menu([
                         'theme-location' => 'primary'
                     ])?>
                 </nav>
+			<main id="main" class="site-main">
+                

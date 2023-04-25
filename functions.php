@@ -38,5 +38,13 @@ if(! function_exists( 'register_scripts_styles' )){
 }
 
 
+//custom image size
+add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
+function wpdocs_theme_setup() {
+	add_image_size( 'custom_img', 300,250,true); // 300 pixels wide (and unlimited height)
+	
+}
+
+
 
 
