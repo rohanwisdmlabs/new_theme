@@ -15,6 +15,9 @@
 	<div id="content" class="site-content">
 		<div id="primary" class="content-area">
 		<nav class="navigation_menu">
+			<div class='custom_logo'>
+			<?php the_custom_logo()?>
+            </div>
                     <?php wp_nav_menu([
                         'theme-location' => 'primary'
                     ])?>
