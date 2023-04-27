@@ -21,6 +21,7 @@ if ( have_posts() ) {
         <article id="post-<?php the_ID()?>"<?php post_class()?>>
         <?php
         the_content();
+        the_post_thumbnail();
         ?>
         </article>
         <?php

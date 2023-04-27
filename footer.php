@@ -3,6 +3,7 @@
 </div>
 </div>
 <div class="powered-by">
+	
 				<?php
 				printf(
 					esc_html__( 'Proudly powered by %s.', 'new_theme' ),
