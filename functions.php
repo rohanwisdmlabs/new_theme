@@ -25,10 +25,9 @@ if(! function_exists( 'register_scripts_styles' )){
         wp_enqueue_style('style', get_stylesheet_uri());
         
         //for full_width
-        if(is_page_template('full_width.php'))
-        {
+      
             wp_enqueue_style('full_width_styles',get_template_directory_uri().'/fullwidthstyle.css',false,1.0,'all');
-        }
+        
     
    
     
