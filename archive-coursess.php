@@ -1,5 +1,4 @@
 <?php
-/* Template Name: Archive Page Coursess */
  get_header();
 
 $args = array(
@@ -12,8 +11,9 @@ $args = array(
 
 		$custom_post = new WP_Query($args);
 
-        $new_content ="<div class='card_container'>";
+       
 		if ($custom_post->have_posts()) {
+			echo "<div class='card_container'>";
 			while ($custom_post->have_posts()) {
 				$custom_post->the_post();
 				if (has_post_thumbnail( get_the_id() ))
@@ -25,18 +25,19 @@ $args = array(
 					$image=wp_get_attachment_image_src( 132, 'custom_img' );
 				}
 				
-				$new_content .= "<div class='card_view'>"
-				."<div class='thumbnail'><img src='".$image[0]."' alt='post_image'></div>"
-				. "<div class='title_tag'>" . get_the_title() . "</div>"
-				. "<div class='desc'>" . wp_trim_words(get_the_content(), 5). "</div></div>";
-
+				  the_title("<div class='card_view'><div class='thumbnail'><img src='".$image[0]."' alt='post_image'></div><div class='title_tag'>","</div><div class='desc'>".wp_trim_words(get_the_content(), 5)."</div></div>");
+				
 			}
 
-			$new_content .= "</div>";
+			echo "</div>";
+		
+			
 			$big=999999999;
+
+			echo "<div class='paginate_links'>";
 			
 
-			$new_content .= paginate_links(array(
+			 echo paginate_links(array(
 				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 				'total' => $custom_post->max_num_pages,
 				'current' =>  max( 1, get_query_var('paged') ),
@@ -46,10 +47,13 @@ $args = array(
 				'next_text' => __('Next &raquo;'),
 				
 			));
-
-			wp_reset_postdata();
-            echo $new_content;
+			
+			echo "</div>";
+			
+            
         }
+		wp_reset_postdata();
+
 
 
  get_footer();?>
