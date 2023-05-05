@@ -12,7 +12,7 @@ $args = array(
 
 		$custom_post = new WP_Query($args);
 
-       echo "<div class='card_container'>";
+        $new_content ="<div class='card_container'>";
 		if ($custom_post->have_posts()) {
 			while ($custom_post->have_posts()) {
 				$custom_post->the_post();
@@ -24,15 +24,19 @@ $args = array(
 				else{
 					$image=wp_get_attachment_image_src( 132, 'custom_img' );
 				}
-				
-				the_title("<div class='card_view'><div class='thumbnail'><img src='".$image[0]."' alt='post_image'></div><div class='title_tag'>","</div><div class='desc'>".wp_trim_words(get_the_content(), 5)."</div></div>");
-				
-			}
-			echo "</div>";
-			$big=999999999;
-			
 
-			echo paginate_links(array(
+				$new_content .= "<div class='card_view'>"
+				."<div class='thumbnail'><img src='".$image[0]."' alt='post_image'></div>"
+				."<div class='desc_card'><div class='title_tag'>" . get_the_title() . "</div>"
+				. "<div class='desc'>" . wp_trim_words(get_the_content(), 50). "</div></div></div>";
+
+			}
+
+			$new_content .= "</div>";
+			$big=999999999;
+
+
+			$new_content .= paginate_links(array(
 				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 				'total' => $custom_post->max_num_pages,
 				'current' =>  max( 1, get_query_var('paged') ),
@@ -40,11 +44,11 @@ $args = array(
 				'prev_next' => true,
 				'prev_text' => __('&laquo; Previous'),
 				'next_text' => __('Next &raquo;'),
-				
+
 			));
 
 			wp_reset_postdata();
-            
+            echo $new_content;
         }
 
 

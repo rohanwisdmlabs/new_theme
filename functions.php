@@ -26,8 +26,14 @@ if(! function_exists( 'register_scripts_styles' )){
         
         //for full_width
       
-            wp_enqueue_style('full_width_styles',get_template_directory_uri().'/fullwidthstyle.css',false,1.0,'all');
+
+            // wp_enqueue_style('full_width_liststyles',get_template_directory_uri().'/full_width_liststyle.css',false,1.0,'all');
         
+            wp_enqueue_style('full_width_styles',get_template_directory_uri().'/fullwidthstyle.css',false,1.0,'all');
+
+        
+            wp_enqueue_script('script',get_template_directory_uri().'/script.js',array('jquery'),'1.0.0',true);
+            
     
    
     
@@ -55,6 +61,9 @@ function wpdocs_theme_setup() {
     add_theme_support( 'custom-logo',$defaults );
 	
 }
+
+
+
 
 
 

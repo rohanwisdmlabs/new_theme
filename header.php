@@ -21,6 +21,10 @@
                     <?php wp_nav_menu([
                         'theme-location' => 'primary'
                     ])?>
-                </nav>
+					<div class='view_styles'>
+						<input id='grid_style' class='submit_btn' type="button" name='Style' value='grid'>
+						<input id='list_style' class='submit_btn' type="button" name='Style' value='list'>
+						
+					</div>                </nav>
 			<main id="main" class="site-main">
                 
